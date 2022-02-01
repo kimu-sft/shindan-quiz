@@ -1,0 +1,275 @@
+/* 
+
+  text-alignは水平方向の配置を設定できます。
+
+  今回の場合は中央に配置するということになります。
+
+  H1タグが用いられた「クイズのテンプレートタイトル」という要素が中央に配置されます。
+
+ */
+
+ h1 {
+
+    text-align:center;
+
+}
+
+
+
+/* 
+
+  containerで囲ったHTML要素が中央ぞろえになります。
+
+  margin-left、rightにはautoを指定しています。autoを指定するとブラウザが適切なマージンを自動で付与してくれます。
+
+  paddingは上下に0.01em 左右に16pxが指定されます。(emについてはこちら：https://www.sejuku.net/blog/75559)
+
+  marginとpaddingについてはN予備校のhttps://www.nnn.ed.nico/courses/999/chapters/13380を見て思い出してみましょう。
+
+ */
+
+.container {
+
+    text-align:center;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    padding:0.01em 16px;
+
+}
+
+
+
+/*
+
+  max-widthとは要素の最大幅を設定するものです。
+
+  問題文を長かったりした場合に980pxの幅で改行されるようになります。
+
+  上下左右のマージンはauto
+
+*/
+
+.content-top {
+
+    max-width:980px;
+
+    margin:auto;
+
+}
+
+
+
+/*
+
+  上下：5px 左右: 10pxでマージンを取ります
+
+  上下：10px 左右: 20pxでパディングを取ります
+
+*/
+
+.text-content {
+
+    margin: 5px 10px;
+
+    padding: 10px 20px;
+
+}
+
+
+
+/*
+
+  上下左右: 15pxでマージンを取ります
+
+  overflowは要素に収まりきらない場合どうするかを指定することができます。
+
+  overflow:hiddenは内容がおさまりきらない場合は省略されます。
+
+  上下：6px 左右: 16pxでパディングを取ります
+
+    文字色は黒
+
+    文字は水平方向に中央ぞろえ
+
+    cursorはマウスが要素の上にある時のマウスポインターがどういったものかを指定します。
+
+    cursor:pointerは指差しのマークになります。
+
+  white-spaceとはソース中のテキストについて、自動改行するか複数の空白を一つの空白にするか、改行を空白にするかなど、改行やスペース、タブの扱いを指定するプロパティです。nowrapはソース中の連続する半角スペース、タブ、改行を一つの半角スペースにまとめて表示します。自動的な折り返しはしないということになります。
+
+    border-radiusは枠線の角を丸めます。 今回は8px分丸めることになります。
+
+    borderは枠線の設定をします。今回は1pxの太さ、普通の線、色はグレーとなります。
+
+*/
+
+.quiz-button {
+
+    margin: 15px;
+
+    padding:6px 16px;
+
+    overflow:hidden;
+
+    color:#000000;
+
+    background-color:#f1f1f1;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+    border-radius:8px!important;
+
+    border:1px solid #cccccc;
+
+}
+
+
+
+/* 
+
+  hoverとはカーソルを合わせること
+
+  これは回答ボタンにカーソルが合った時にことCSSを適用するということになります。
+
+  文字色は黒、背景色は水色というCSSがカーソルが合った時に適用されます
+
+*/
+
+.quiz-button:hover {
+
+    color:#000000;
+
+    background-color:#aef6ff;
+
+}
+
+
+
+/* 
+
+  activeとはクリック途中のことを指します。
+
+  これは回答ボタンを押している最中にCSSを適用するということになります。
+
+  上:6px下:4pxのパディングを設定をします。
+
+  1pxの太さ、普通の線、色は濃い青の枠線を設定します。
+
+    背景色は濃い青
+
+    文字色は白
+
+    box-shadowは要素の周りに影を追加します。
+
+    今回の場合はinsetにより影は要素の内側、水平方向に0px 垂直方向に方向に0px ぼかしの範囲は8px 色は濃い青を指定します。
+
+   box-shadowは下記のURLに詳しく説明が書かれています。
+
+   https://developer.mozilla.org/ja/docs/Web/CSS/box-shadow
+
+*/
+
+.quiz-button:active{
+
+    padding-top:6px;
+
+    padding-bottom:4px;
+
+    border:1px solid #334c66;
+
+    background-color:#69c;
+
+    color:#e0ebf5;
+
+    box-shadow:inset 0px 0px 2px #3a6da0;
+
+}
+
+
+
+/* 
+
+  display:noneは非表示になります。
+
+　ここではラジオボタンの〇を非表示にしています。
+
+  この記述をコメントにして、Chromeで確認すると理解しやすいかもしれません。
+
+*/
+
+.radio-inline__input {
+
+    display: none;
+
+}
+
+
+
+/* 
+
+  インラインブロック要素にする。
+
+　インラインブロック要素とはインラインブロック要素は横幅と高さの指定が可能で、横幅の初期値が内容で決まる要素です
+
+　https://www.itra.co.jp/webmedia/what-is-inline-block.html
+
+  上下：0.5em　左右： 1rem　のpaddingを設定
+
+  右：18px マージンを設定
+
+　要素の角を3px分丸める
+
+　アウトライン（枠線）を線の形はauto, 幅は3px, 色は黒
+
+*/
+
+.radio-inline__label {
+
+    display: inline-block;
+
+    padding: 0.5rem 1rem;
+
+    margin-right: 18px;
+
+    border-radius: 3px;
+
+    transition: all .2s;
+
+    outline-color: #000000;
+
+    outline-offset: -2px;
+
+    outline-style: auto;
+
+}
+
+
+
+/* .radio-inline__input:checked + .radio-inline__labelについて
+
+.radio_inline__input:checkedとはチェックされている.radio_inline__inputが付与されたHTML要素を指します。
+
+.radio_inline__inputが付与されている要素は問題の選択肢です。
+
+.radio_inline__labelが付与されている要素は選択肢の文字に付与されています。
+
+プロパティ ＋ プロパティは指定の要素に隣接した要素に装飾が適用されます。 
+
+そのため、チェックされている選択肢の文字に対してCSSが適用されます。 */
+
+.radio-inline__input:checked + .radio-inline__label {
+
+    background: #B54A4A;
+
+    color: #fff;
+
+    text-shadow: 0 0 1px rgba(0,0,0,.7);
+
+}
